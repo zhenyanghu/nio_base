@@ -20,12 +20,8 @@ public class TimeServerHandle implements Runnable {
 	
 	@Override
 	public void run() {
-//		BufferedReader in = null;
-//		PrintWriter out = null;
 		try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 				PrintWriter out = new PrintWriter(socket.getOutputStream(), true);){
-//			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//			out = new PrintWriter(socket.getOutputStream(), true);
 			String currentTime = null;
 			String body = null;
 			while (true) {

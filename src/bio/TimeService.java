@@ -26,8 +26,10 @@ public class TimeService {
 			System.out.println("The time server is start in port : " + port);
 			Socket socket = null;
 			while (true) {
-				socket = server.accept();//监听客户端的连接，
-				new Thread(new TimeServerHandle(socket)).start();//一连接一线程
+				// 监听客户端的连接
+				socket = server.accept();
+				//一连接一线程
+				new Thread(new TimeServerHandle(socket)).start();
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

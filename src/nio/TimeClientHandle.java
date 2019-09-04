@@ -1,4 +1,4 @@
-package bio;
+package nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -89,7 +89,8 @@ public class TimeClientHandle implements Runnable {
 					sc.register(selector, SelectionKey.OP_READ);
 					doWrite(sc);
 				} else {
-					System.exit(1);//连接失败，程序退出
+					//连接失败，程序退出
+					System.exit(1);
 				}
 			}
 			if (key.isReadable()) {
